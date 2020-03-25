@@ -63,8 +63,8 @@ struct ContentView: View {
             
             
             Group{
+                //身體左
                 Path{(path) in
-                    //身體左
                     path.move(to: CGPoint(x:150, y:412))
                     path.addLine(to: CGPoint(x:135, y:600))
                     path.addLine(to: CGPoint(x:260, y:415))
@@ -72,8 +72,8 @@ struct ContentView: View {
                 .fill(Color.blue)
                 //.fill(Color.purple)
                 
+                //身體右
                 Path{(path) in
-                    //身體右
                     path.move(to: CGPoint(x:135, y:600))
                     path.addQuadCurve(to: CGPoint(x:260, y:415), control: CGPoint(x:425, y:633))
                 }
@@ -82,21 +82,22 @@ struct ContentView: View {
             }
             
             Group{
+                //左大腳
                 Path{(path) in
-                    //左大腳
                     path.move(to: CGPoint(x:143, y:500))
                     path.addCurve(to: CGPoint(x:135, y:600), control1: CGPoint(x:40, y:450), control2: CGPoint(x:20, y:600))
                 }
                 .fill(Color.white)
                 //.fill(Color.yellow)
                 
+                //右小腳
                 Path{(path) in
-                    //右小腳
                     path.move(to: CGPoint(x:320, y:530))
                     path.addQuadCurve(to: CGPoint(x:260, y:600), control: CGPoint(x:450, y:600))
                 }
                 .fill(Color.white)
                 //.fill(Color.orange)
+                
                 //手臂
                 Path(ellipseIn: CGRect(x:90, y:430, width: 120, height: 60))
                     .fill(Color.white)
@@ -111,43 +112,57 @@ struct ContentView: View {
                     path.move(to: CGPoint(x:10, y:270))
                     path.addLine(to: CGPoint(x:100, y:290))
                 }
-                .stroke(Color.black, lineWidth: 3)
+                //.stroke(Color.black, lineWidth: 3)
+                .stroke(Color.blue, style: StrokeStyle(lineWidth: 7, lineCap: .round, dash: [8]))
+                
                 //左中鬍鬚
                 Path{(path) in
                     path.move(to: CGPoint(x:10, y:300))
                     path.addLine(to: CGPoint(x:100, y:300))
                 }
-                .stroke(Color.black, lineWidth: 3)
+                //.stroke(Color.black, lineWidth: 3)
+                .stroke(Color.red, style: StrokeStyle(lineWidth: 7, lineCap: .round, dash: [5]))
+                
                 //左下鬍鬚
                 Path{(path) in
                     path.move(to: CGPoint(x:10, y:330))
                     path.addLine(to: CGPoint(x:100, y:310))
                 }
-                .stroke(Color.black, lineWidth: 3)
+                //.stroke(Color.black, lineWidth: 3)
+                .stroke(Color.green, style: StrokeStyle(lineWidth: 7, lineCap: .round, dash: [10]))
+                
                 //右上鬍鬚
                 Path{(path) in
                     path.move(to: CGPoint(x:315, y:290))
                     path.addLine(to: CGPoint(x:405, y:270))
                 }
-                .stroke(Color.black, lineWidth: 3)
+                //.stroke(Color.black, lineWidth: 3)
+                .stroke(Color.blue, style: StrokeStyle(lineWidth: 7, lineCap: .round, dash: [8]))
+                
                 //右中鬍鬚
                 Path{(path) in
                     path.move(to: CGPoint(x:315, y:300))
                     path.addLine(to: CGPoint(x:405, y:300))
                 }
-                .stroke(Color.black, lineWidth: 3)
+                //.stroke(Color.black, lineWidth: 3)
+                .stroke(Color.red, style: StrokeStyle(lineWidth: 7, lineCap: .round, dash: [5]))
+                
                 //右下鬍鬚
                 Path{(path) in
                     path.move(to: CGPoint(x:315, y:310))
                     path.addLine(to: CGPoint(x:405, y:330))
                 }
-                .stroke(Color.black, lineWidth: 3)
+                //.stroke(Color.black, lineWidth: 3)
+                .stroke(Color.green, style: StrokeStyle(lineWidth: 7, lineCap: .round, dash: [10]))
+                
                 //左眼
                 Path(ellipseIn: CGRect(x:130, y:290, width: 30, height: 40))
                     .fill(Color.black)
+                
                 //右眼
                 Path(ellipseIn: CGRect(x:255, y:290, width: 30, height: 40))
                     .fill(Color.black)
+                
                 //鼻子
                 Path(ellipseIn: CGRect(x:190, y:330, width: 40, height: 30))
                     .fill(Color.yellow)
